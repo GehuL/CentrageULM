@@ -1,5 +1,9 @@
 # CentrageULM
 
+Application mobile pour le calcul du centre de gravité des ULM.
+
+## Principe
+
 Les ULM sont des aéronefs ultra-légers. Il est nécessaire de connaître le centre de graviter de l'appareil et son poids, afin de respecter sa charge maximale. Selon le modèle, les limites peuvent varier.
 L'application permet d'enregistrer des modèles d'ULM avec leur tolérance maximale et minimale du centre de gravité.
 Sa charge peut varier selon la quantité d'essences, de bagages ou du poids et nombre de passager. L'utilisateur peut alors renseigner des éléments
