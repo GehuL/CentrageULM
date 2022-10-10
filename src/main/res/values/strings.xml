@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">CentrageULM</string>
+    <string name="info_title"><b>INFORMATIONS</b></string>
+
+    <string name="help_info">
+        <b>Centrage [DEF]</b>\n\n
+        Le calcul du centrage passe par le calcul du centre de gravité longitudinal de l’avion.\n\n
+Le centrage est le centre de gravité que l’on compare à une plage de deux valeurs extrêmes [centrage avant, centrage arrière].\n\n
+        <b>Centre de poussée [DEF]</b>\n\n
+        Sur nos machines légères, le centrage doit se trouver autour du centre de poussée de l’avion qui correspond à l’application de la résultante de la portance aérodynamique.\n
+        Le centre de poussée est généralement situé autour de 30% de la corde de l’aile en prenant comme référence son bord d’attaque.\n\n
+
+        <b>Calculs</b>\n\n
+        Pour calculer le centre de gravité par rapport à la référence (bord d’attaque), on part de la formule de calcul des moments :\n\n
+        Dcgcur = Somme (Mx . Dx) / Mcur\n\n
+
+  • Mmax = Masse totale courante de l’avion\n
+    • Dcgcur= Position du centre de gravité par rapport à la réf\n
+    • Mx = Masse en un point particulier\n
+    • Dx = Distance de Mx par rapport à la réf\n\n
+
+Toutes les distances par rapport à la réf sont appelées « Bras de levier ».\n
+        L’idée pour simplifier les calculs ultérieurs est de faire une pesée de l’avion à vide Mvide (Sans essence mais complet avec son huile et liquide de refroidissement).\n
+Pour cela, l’avion doit être mis en ligne de vol, puis on mesure le bras de levier au train principal (Compté en négatif s’il est en avant de la réf) et celui de la roulette (comptée en négatif pour la roue avant d’un train tricycle et positif pour une roulette de train classique).\n
+Un premier calcul avec ces infos donne donc le centrage à vide Cvide.\n
+        A partir de ce centrage, on ajoute d’autres points caractéristiques dont les masses peuvent varier à chaque vol sous forme de couple (Mx, Dx) :\n\n
+    • Masse pilote \n
+    • Masse passager \n
+    • Masse essence avant \n
+    • Masse essence ailes \n
+    • Masse bagages\n\n
+        Et on applique le calcul précédent : \n \n Dcgcur = ((Mvide . Cvide) + Somme (Mx . Dx)) / Mtot
+        Avec Mtot = Mvide + somme(Mx)\n<br/>
+</string>
+
+
+</resources>

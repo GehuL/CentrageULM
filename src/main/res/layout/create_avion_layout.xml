@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/light_blue_400"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/retour_centrage"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@android:drawable/ic_menu_revert"
+            android:contentDescription="TODO"
+
+            app:layout_goneMarginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/surfaceView"
+            app:layout_constraintStart_toStartOf="@+id/surfaceView"
+            app:layout_constraintTop_toTopOf="@+id/surfaceView"
+            />
+
+        <ImageButton
+            android:id="@+id/save"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/save"
+            android:contentDescription="TODO"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintCircleRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_save" />
+
+        <TextView
+            android:id="@+id/titre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modifier un ULM"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:alpha="0.7"
+        android:src="@drawable/plan_3_vues"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/avion_name_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="ULM"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/avionName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="Nom de l'ULM"
+                    android:inputType="textPersonName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/surfaceView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/roues_layout"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Bras de levier roues"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600"
+                app:suffixText="cm">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rouesDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="400"
+                    android:inputType="numberDecimal|numberSigned" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/roulette_layout"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Bras de levier roulette"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600"
+                app:suffixText="cm">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rouletteDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="36"
+                    android:inputType="numberDecimal|numberSigned" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/essence_layout"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Bras de levier essence avant"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600"
+                app:suffixText="cm">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/essenceAvant"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="36"
+                    android:inputType="numberDecimal|numberSigned" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/essence_ailes_layout"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Bras de levier essence ailes"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600"
+                app:suffixText="cm">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/essenceAilesDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="36"
+                    android:inputType="numberDecimal|numberSigned" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passagers_layout"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Bras de levier passagers"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600"
+                app:suffixText="cm">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passagersDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="36"
+                    android:inputType="numberDecimal|numberSigned" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bag_layout"
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Bras de levier bagages"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600"
+                app:suffixText="cm">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bagDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="36"
+                    android:inputType="numberDecimal|numberSigned" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/min_"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_weight="1"
+                    android:hint="Min*"
+                    app:boxBackgroundColor="@color/blanc_alpha"
+                    app:boxStrokeColor="@color/light_blue_400"
+                    app:boxStrokeWidth="1.5dp"
+                    app:endIconMode="clear_text"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:hintTextColor="@color/gray_600"
+                    app:suffixText="cm">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/min"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="20"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Space android:layout_width="20dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/max_"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:hint="Max*"
+                    app:boxBackgroundColor="@color/blanc_alpha"
+                    app:boxStrokeColor="@color/light_blue_400"
+                    app:boxStrokeWidth="1.5dp"
+                    app:endIconMode="clear_text"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:hintTextColor="@color/gray_600"
+                    app:suffixText="cm">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/max"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="30"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="*Distance minimal et maximal du centre de gravité" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="35dp"
+                android:gravity="center"
+                android:hint="Masse max authorisé"
+                app:boxBackgroundColor="@color/blanc_alpha"
+                app:boxStrokeColor="@color/light_blue_400"
+                app:boxStrokeWidth="1.5dp"
+                app:endIconMode="clear_text"
+                app:expandedHintEnabled="false"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:hintTextColor="@color/gray_600"
+                app:suffixText="kg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/masseMax"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="36"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </TableLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
